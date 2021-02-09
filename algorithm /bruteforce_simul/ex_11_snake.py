@@ -23,6 +23,7 @@ def main():
     head_row = 1
     head_col = 1
 
+    # 뱀의 몸통이 있는 좌표 삽입
     path_list = [(head_row,head_col)]
 
 
@@ -36,6 +37,7 @@ def main():
         x, y = apple_loca[i][0], apple_loca[i][1]
         data[x][y] = 1
 
+    # 뱀이 있는 곳은 2로 만듬 
     data[head_row][head_col] = 2
 
 
@@ -70,11 +72,11 @@ def main():
             time +=1
             break
 
+
+        # 회전하는 시간!
         for i in range(len(turn_list)):
             if time == turn_list[i][0]:
                 dir = turn_list[i][1]
-
-
                 if dir == "L":
                     direction = (direction - 1) % 4
                 else:

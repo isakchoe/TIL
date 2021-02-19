@@ -61,7 +61,7 @@ def bfs(arr):
 
     answer = 0
 
-    # 안걸린 학생수 구하기 
+    # 안걸린 학생수 구하기
     for i in range(length):
         for e in range(length):
             if arr[i][e] == "S":

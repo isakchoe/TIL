@@ -9,14 +9,11 @@ for i in range(n):
     data.append(temp)
 
 
-
 def bfs( x, y, index):
-
 
     q = deque()
 
     q.append([x,y])
-
 
     dx = [0,0,1,-1]
     dy = [1,-1,0,0]
@@ -52,7 +49,6 @@ def bfs( x, y, index):
                     num += 1
                     total += data[nx][ny]
 
-
     for i,j in union_list:
         data[i][j] = total//num
 
@@ -60,13 +56,15 @@ def bfs( x, y, index):
 
 
 
-
 total_count = 0
+
 while True:
     index = 0
 
+    # 방문 여부 확인을 위한 변수
     union = [[-1] * n for _ in range(n)]
 
+    # 모든 요소에 대해 bfs 하기
     for i in range(n):
         for e in range(n):
             if union[i][e] == -1:

@@ -8,6 +8,8 @@ def main():
 
     arr.sort()
 
+    print(arr[(n-1)//2])
+
 
 
 

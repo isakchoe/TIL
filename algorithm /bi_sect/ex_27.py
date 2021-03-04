@@ -1,19 +1,15 @@
 
-def bi_sect(arr,start,end, target):
+from bisect import  bisect_left, bisect_right
 
-    while start <=end:
-        mid = (start + end)//2
+# left ~ right  범위 값 개수!!
+def count_by_range(arr, left, right):
 
-        if arr[mid] == target:
-            return [start, end]
+    length = len(arr)
 
-        elif arr[mid] > target:
-            end = mid -1
+    left_index = bisect_left(arr, left)
+    right_index = bisect_right(arr, right)
 
-        elif arr[mid] < target:
-            start = mid + 1
-
-    return -1
+    return right_index - left_index
 
 
 
@@ -22,19 +18,18 @@ def main():
 
     data = list(map(int, input().split()))
 
+    # data 함수에 x 값이 있냐 확인!
+    a = count_by_range(data, x,x)
 
-    if bi_sect(data,0,len(data)-1, x) == -1:
+    if a == 0:
         print(-1)
-
     else:
-        count = 0
-        start, end = bi_sect(data,0,len(data)-1 ,x)
+        print(a)
 
-        for i in range(start,end+1):
-            if data[i] == x:
-                count += 1
 
-        print(count)
+
+
+
 
 
 

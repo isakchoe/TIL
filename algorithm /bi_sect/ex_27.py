@@ -4,7 +4,7 @@ from bisect import  bisect_left, bisect_right
 # left ~ right  범위 값 개수!!
 def count_by_range(arr, left, right):
 
-    length = len(arr)
+    
 
     left_index = bisect_left(arr, left)
     right_index = bisect_right(arr, right)

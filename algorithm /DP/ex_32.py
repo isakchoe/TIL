@@ -21,6 +21,7 @@ for i in range(1,n):
         else:
             right = arr[i-1][e-1]
 
+        # 점화식
         arr[i][e] += max(left,right)
 
 result = 0

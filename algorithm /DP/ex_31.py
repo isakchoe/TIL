@@ -31,7 +31,7 @@ for tc in range(t):
                 down = dp[row+1][col-1]
             else:
                 down = dp[row][col-1]
-
+            # 점화식
             dp[row][col] += max(up,down, dp[row][col-1])
 
 

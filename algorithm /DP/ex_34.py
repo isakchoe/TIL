@@ -3,18 +3,19 @@ def main():
     n = int(input())
     arr = list(map(int,input().split()))
 
+    arr.reverse()
 
-    count = 0
-    end = arr[-1]
+    dp = [1]*n
 
-    for i in range(n-2,-1,-1):
-        if arr[i] >= end:
-            end = arr[i]
-        else:
-            count+=1
+    for i in range(1,n):
 
+        for e in range(0,i):
+            if arr[i] > arr[e]:
+                # 점화식
+                dp[i] = max(dp[e]+1,dp[i])
 
-    print(count)
+    print(n - max(dp))
+
 
 
 main()

@@ -44,4 +44,3 @@ for i in range(1,n+1):
         time = max(time, distance[i])
 
 print(count, time)
-

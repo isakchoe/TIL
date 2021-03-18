@@ -44,4 +44,3 @@ if result >= INF:
     print(-1)
 else:
     print(result)
-

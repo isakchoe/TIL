@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7151fa5-7601-4043-843b-8caebca6b593" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ex_03.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../algorithm /Graph/ex_03.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../algorithm /Graph/ex_03.py" afterDir="false" />
-    </list>
+    <list default="true" id="e7151fa5-7601-4043-843b-8caebca6b593" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +38,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617289097091</updated>
-      <workItem from="1617289104104" duration="1221000" />
+      <workItem from="1617289104104" duration="1258000" />
     </task>
     <servers />
   </component>

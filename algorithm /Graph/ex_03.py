@@ -1,6 +1,5 @@
 
 
-
 def find_p(p, x):
     if p[x] != x:
         p[x] = find_p(p, p[x])

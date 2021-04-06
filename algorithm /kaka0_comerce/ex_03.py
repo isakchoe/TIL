@@ -48,7 +48,7 @@ def solution(n, passgener, train):
       max_result = distance[i]
       max_index = i
   
-  print(distance)
+
 
   print([max_index, max_result])
 

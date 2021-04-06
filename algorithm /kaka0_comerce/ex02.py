@@ -1,6 +1,5 @@
 
 
-
 # 2번 문제 
 def solution(needs, r):
 

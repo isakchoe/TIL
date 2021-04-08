@@ -17,27 +17,25 @@ def union(parent, a, b):
 
 g = int(input())
 p = int(input())
-
 plane = []
+
+parent = [0]* (g+1)
+
+for i in range(g+1):
+    parent[i] = i
 
 for i in range(p):
     plane.append(int(input()))
 
-plane.sort()
-
-parent = [0] *(g+p+1)
-
-for i in range(1,g+p+1):
-    parent[i] = i
-
-
 result = 0
 
-# plane 노드
-
-
+for gate in plane:
+    if find_parent(parent, gate) != 0 :
+        union(parent, gate, gate -1)
+        result += 1
 
 print(result)
+
 
 
 

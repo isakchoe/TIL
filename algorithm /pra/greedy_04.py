@@ -3,7 +3,6 @@ def main2():
 
     # 책 답안
 
-    s = time.time()
 
     n = int(input())
     data = list(map(int, input().split()))
@@ -19,8 +18,7 @@ def main2():
 
     print(target)
 
-    e = time.time()
-    print(e-s)
+
 
 
 

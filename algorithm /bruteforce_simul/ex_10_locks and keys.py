@@ -67,10 +67,3 @@ def main(key,lock):
 
 
     return False
-
-
-
-
-
-
-    

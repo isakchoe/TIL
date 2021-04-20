@@ -58,9 +58,9 @@ def solution(n, passgener, train):
 
 
 
-n = 4
-passgener = [2,1,2,2]
-train = [[1,2], [1,3], [2,4]]
+n = 6
+passgener = [1,1,1,1,1,1]
+train = [[1,2], [1,3], [1,4], [3,5],[3,6]]
 
 
 solution(n, passgener, train)

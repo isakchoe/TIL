@@ -13,7 +13,9 @@ def bfs( x, y, index):
 
     q = deque()
 
+    # 초기 세팅, 방문처리
     q.append([x,y])
+    union[x][y] = index
 
     dx = [0,0,1,-1]
     dy = [1,-1,0,0]

@@ -59,7 +59,6 @@ for _ in range(t):
 
 
 
-
     q = deque()
 
 
@@ -68,14 +67,20 @@ for _ in range(t):
         if new_indegree[i] == 0:
             q.append(i)
 
-    if len(q) == 0:
-        print("IMPOSSIBLE")
-        break
-
-
     result = []
 
     while n >0 :
+
+        # 싸이클 발생
+        if len(q) == 0:
+            print("IMPOSSIBLE")
+            break
+
+        # 순위 알 수 없음: 인접 차수가 0인것이 2개이상이라는 것은 == 큐의 길이가 2이상, 순서를 알 수 없다.
+        if len(q) >=2:
+            print("?")
+            break
+
         now = q.popleft()
 
         result.append(now)
@@ -93,7 +98,6 @@ for _ in range(t):
             print(i, end =" ")
         print()
 
-    else:
-        print("?")
+
 
 

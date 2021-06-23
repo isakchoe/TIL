@@ -16,4 +16,4 @@ def solution(nums):
     if n >= m:
         return m
     else:
-        return n 
+        return n

@@ -11,7 +11,6 @@ graph = []
 for i in range(n):
     graph.append(list(map(int,input())))
 
-
 # 방문처리
 visited = [[False]*n for _ in range(n)]
 

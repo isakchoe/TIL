@@ -35,6 +35,9 @@
 #
 # print(total)
 
+
+
+
 import sys
 input = sys.stdin.readline
 
@@ -48,6 +51,7 @@ for _ in range(k):
     value, time = map(int, input().split())
     arr.append([value, time])
 
+# 배낭알고리즘
 for i in range(1,k+1):
     for j in range(1, n+1):
         # 수강 가능
@@ -56,5 +60,6 @@ for i in range(1,k+1):
         else:
             dp[i][j] = dp[i-1][j]
 
+# 출력
 print(dp[-1][-1])
 

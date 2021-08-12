@@ -2,7 +2,9 @@
 # 다익스트라!
 # 넘버링 맞추기
 
-import heapq
+import heapq, sys
+
+input = sys.stdin.readline
 
 def djk(start, end, time):
 

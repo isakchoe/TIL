@@ -1,7 +1,4 @@
 
-
-
-
 n =int(input())
 
 arr = []
@@ -9,7 +6,7 @@ for _ in range(n):
     t, s = map(int, input().split())
     arr.append([t,s])
 
-# 마감시간 급한거 부터
+# 마감시간 급한거 부터 순차정렬
 arr.sort(key=lambda x:x[1])
 
 start_time = arr[0][1] - arr[0][0]

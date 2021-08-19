@@ -1,6 +1,4 @@
 
-import sys
-input = sys.stdin.readline
 
 # 유니언파인드
 #  집합 따로 저장 !
@@ -16,8 +14,10 @@ def union(parent, a, b):
 
     if a > b:
         parent[a] = b
+        set_lens[b] += set_lens[a]
     else:
         parent[b] = a
+        set_lens[a] += set_lens[b]
 
 
 
@@ -28,9 +28,8 @@ parent = [0]*(10**6 +1)
 for i in range(len(parent)):
     parent[i] = i
 
-
-# 카운트 딕
-dic = {}
+# 같은 집합 내 요소 개수 저장하는 리스트
+set_lens = [1] *(10**6 +1)
 
 
 # 입력받기
@@ -44,21 +43,13 @@ for _ in range(t):
 
         if find_p(parent,a) != find_p(parent, b):
             union(parent, a, b)
-
-
-
     else:
-        # 부모계수 갱신
-        for i in range(1, len(parent)):
-            find_p(parent, i)
+        # 타켓의 루트 노드
+        target = find_p(parent, int(command[1]))
 
-        target = parent[int(command[1])]
+        print(set_lens[target])
 
-        count = 0
-        for i in range(1,len(parent)):
-            if parent[i] == target:
-                count += 1
-        print(count)
+
 
 
 

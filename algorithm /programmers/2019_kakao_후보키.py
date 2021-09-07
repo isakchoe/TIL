@@ -28,6 +28,7 @@ def solution(relation):
 
         #         조합
         temp = list(combinations(blank, i))
+        print(temp)
 
 
 

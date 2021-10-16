@@ -16,8 +16,6 @@ using namespace std;
 // 최대값 프린트!
 
 
-
-
 int main(){
 
     int t;

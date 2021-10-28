@@ -1,4 +1,4 @@
-
+from collections import deque
 
 
 arr = [123, 323, 2, 3, 60, 23, 57, 43]
@@ -116,6 +116,74 @@ def count_sort(arr):
 
     return answer
 
+
+# 위상정렬
+def topological_sort(tree):
+
+    tree ---> [30,1, 30, 2, 30, 3, 3, 4]   루트노드가 30, 자식 노드 3개(1,2,3)   3 -->4자식노드
+
+
+    #
+    # # 위상정렬
+    # a 노드 --> B 노드  화살표를 표시하는 것
+    #
+    # 각 노드마다, 받는 화살표를 기록하자
+    #
+    # 받는 화살표가 0 이면? --> 루트노드   !! 중요!!
+    #
+    # 로직 : 화살표가 0인노드를 큐에 넣는다. 루트노드에 연결된 노드: 값 -1  --> 0 인값이 생겨요
+    #
+    # 쏘는 화살표가 없다 --> 리프노드
+    #
+    #
+    # 루트 ---> 동일레벨노드 ---->하위레벨 노드 --->
+    #
+    # a ---> b   ---> e
+    #        c
+    #        d
+
+    # 집합으로 노드 개수 판별
+    arr = list(set(tree))
+    arr.sort()
+
+    index_dic = {}
+
+    #  값: 인덱스   딕셔너리형태
+    for i in range(len(arr)):
+        index_dic[arr[i]] = i
+
+    n = len(arr)
+
+    # 인접차수
+    indegrees = [0]*(n)
+
+    for i in range(0,len(tree),2):
+        a,b = tree[i], tree[i+1]
+        b_index = index_dic[b]
+        indegrees[b_index] += 1
+
+    q = deque
+    for i in range(n):
+        if indegrees[i] == 0:
+            q.append([i, arr[i]])
+
+    while q:
+        now_index, value  = q.popleft()
+        print(value)
+        for i in range(0,tree,2):
+            a, b = tree[i], tree[i+1]
+            if a == value:
+                b_index = index_dic[b]
+                indegrees[b_index] -= 1
+                if indegrees[b_index] == 0:
+                    q.append([b_index, arr[b_index]])
+
+
+
+
 # print(count_sort(arr))
 
 print(merge_sort(arr), 'merge')
+
+
+

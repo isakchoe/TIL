@@ -1,7 +1,7 @@
 from collections import deque
 
 
-arr = [123, 323, 2, 3, 60, 23, 57, 43]
+arr = [3, 2, 4, 6, 60, 23, 57, 43]
 
 
 # 삽입정렬
@@ -18,19 +18,25 @@ def insert_order(arr):
 
 # 버블정렬 -- 삽입정렬과 순서만 반대
 def bubble_sort(arr):
-    for i in range(len(arr), 0, -1):
+    for i in range(len(arr), -1, -1):
         for j in range(1,i):
             if arr[j-1] > arr[j]:
                 arr[j-1],arr[j] = arr[j], arr[j-1]
     return arr
 
+
+print(bubble_sort(arr), 'bubble')
+
+
 # 선택정렬
 def select_sort(arr):
-    for i in range(len(arr)-1):
+    for i in range(len(arr)):
+        min_index = i
         for j in range(i+1, len(arr)):
-            # swap
-            if arr[j] < arr[i]:
-                arr[i], arr[j] = arr[j], arr[i]
+            if arr[j] < arr[min_index]:
+                min_index = j
+        # swap
+        arr[i], arr[min_index] = arr[min_index], arr[i]
     return arr
 
 
@@ -47,6 +53,39 @@ def quick_sort(arr):
     right_side = [x for x in tail if x > pivot]
 
     return quick_sort(left_side) + [pivot] + quick_sort(right_side)
+
+
+def partition(my_list, start, end):
+    # 이전 과제에서 작성한 코드를 붙여 넣으세요!
+    p = end
+
+    i = start
+    big = start
+
+    while i < end:
+        if my_list[i] > my_list[p]:
+
+            i += 1
+        else:
+            my_list[i], my_list[big] = my_list[big], my_list[i]
+            i += 1
+            big += 1
+
+    my_list[p], my_list[big] = my_list[big], my_list[p]
+    return big
+
+
+# 퀵 정렬
+def quicksort_origin(my_list, start, end):
+    # 코드를 작성하세요.
+    if end - start < 1:
+        return
+
+    else:
+        pivot = partition(my_list, start, end)
+        quicksort_origin(my_list, start, pivot - 1)
+        quicksort_origin(my_list, pivot + 1, end)
+
 
 # print(quick_sort(arr))
 
@@ -86,7 +125,7 @@ def merge_sort(arr):
     start = 0
     end = len(arr)
 
-    mid = (start+end)//2
+    mid = len(arr)//2
 
     left = arr[:mid]
     right = arr[mid:]
@@ -120,7 +159,7 @@ def count_sort(arr):
 # 위상정렬
 def topological_sort(tree):
 
-    tree ---> [30,1, 30, 2, 30, 3, 3, 4]   루트노드가 30, 자식 노드 3개(1,2,3)   3 -->4자식노드
+    # tree ---> [30,1, 30, 2, 30, 3, 3, 4]   루트노드가 30, 자식 노드 3개(1,2,3)   3 -->4자식노드
 
 
     #

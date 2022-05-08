@@ -14,37 +14,38 @@ def count_odd(num):
     return count
 
 
-answer = 0
+max_count = -1
+min_count = int(1e9)
 
 def dfs(num, count):
-
-    count += count_odd(num)
-
+    global max_count, min_count
+    now_count = count_odd(num)
     if len(num) == 1:
-        return count
+        return now_count + count
     elif len(num) == 2:
-        temp = int(num[0])+ int(num[1])
-        return dfs(str(temp))
-
-
-def solution(num, count):
-
-    if len(num) <=2:
-        return dfs(num, count)
+        temp = int(num[0]) + int(num[1])
+        return dfs(str(temp), count + now_count)
     else:
+        for i in range(len(num)-2):
+            for j in range(i+1, len(num)-1):
+                front = num[0:i+1]
+                middle = num[i+1: j+1]
+                back = num[j+1:]
+                # print(front,middle,back)
+                total = int(front) + int(middle) + int(back)
+                temp = dfs(str(total), now_count + count)
 
-        for i in range(len(num)):
-            for j in range(i + 1, len(num)):
-                front = int(num[0:i + 1])
-                middle = int(num[i + 1: j + 1])
-                back = int(num[j + 1:])
+                max_count = max(max_count, temp)
+                min_count = min(min_count, temp)
 
-                total_sum = front + middle + back
-                temp = count_odd(str(total_sum))
-
-                return temp + solution(total_sum, count+ temp)
+        return temp
 
 
 
+if len(n) <= 2:
+    answer = dfs(n, 0)
+    print(answer, answer)
 
-
+else:
+    dfs(n,0)
+    print(min_count, max_count)

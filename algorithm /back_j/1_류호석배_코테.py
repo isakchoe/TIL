@@ -37,7 +37,7 @@ def dfs(num, count):
 
                 max_count = max(max_count, temp)
                 min_count = min(min_count, temp)
-
+        # 리턴이 없으면, temp = null
         return temp
 
 
@@ -45,7 +45,6 @@ def dfs(num, count):
 if len(n) <= 2:
     answer = dfs(n, 0)
     print(answer, answer)
-
 else:
     dfs(n,0)
     print(min_count, max_count)

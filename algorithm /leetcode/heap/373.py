@@ -1,6 +1,11 @@
 
 import heapq
 
+
+#  오늘의집 코테에서 나왔던 비슷한 유형
+#  정렬의 특성을 이용하는 문제..
+
+
 class Solution:
     def kSmallestPairs(self, nums1: [int], nums2: [int], k: int) -> [int]:
         q = []

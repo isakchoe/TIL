@@ -46,7 +46,7 @@ class Solution:
                         temp += "C"
                 answer.append(temp)
 
-            # 2,3,
+            # 0,2,3,
             elif mod < 5:
                 temp = ""
                 for i in range(mod):

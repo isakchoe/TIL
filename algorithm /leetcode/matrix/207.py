@@ -5,8 +5,6 @@ from collections import deque
 class Solution:
 
     def topology(self, graph, indegree):
-        result = []
-
         q = deque()
 
         for i in range(len(indegree)):

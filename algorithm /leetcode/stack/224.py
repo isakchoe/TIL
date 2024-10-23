@@ -44,7 +44,6 @@ class Solution:
         if len(formated_list) == 3:
             return int(formated_list[1])
 
-
         num_stack = []
 
         for string in formated_list:
@@ -69,7 +68,6 @@ class Solution:
 
                     elif pop_stack2 == "+":
                         temp += pop_stack
-
 
             elif string != "+" and string != "-" and string != "(" :
                 num_stack.append(int(string))

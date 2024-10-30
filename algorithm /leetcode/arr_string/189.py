@@ -8,6 +8,7 @@ class Solution:
 
         half = k//2
 
+        # 절반.. 뒤집기... 잘 메모...
         for i in range(half):
             nums[i], nums[k-1-i] = nums[k-1-i], nums[i]
 
